@@ -6,10 +6,15 @@
  <h2>Avaible cocktails</h2>
 
  <table class= "table">
+  <%= cl_image_tag("lhhyp3b0h6neybcrlyjt",
+      width: 700, height: 300, crop: :fill) %>
+
      <ol>
      <% @cocktails.each do |cocktail| %>
         <li>
+          <%= cl_image_tag cocktail.photo, height: 30, width: 30, crop: :fill %>
           <%= cocktail.name %>
+
           <%= link_to "Show", cocktail_path(cocktail) %>
         </li>
       <% end %>
